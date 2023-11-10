@@ -20,7 +20,7 @@ router.post('/login', async (req, res) => {
         if(userExit) {
             compare(password, userExit.password, function (error, result) {
                 if(result) {
-                    return res.status(statusCode.ok).json({ok: "User login successfully"});
+                    return res.status(statusCode.ok).json({ok: userExit.userName});
                 } else {
                     return res.status(statusCode['invalid-credentials']).json({error: "Invalid credentials"});
                 }
